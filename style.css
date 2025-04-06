@@ -1,0 +1,372 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Basic Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #343a40;  
+    background-color: #cccccc;     /* Standard dark text color */
+    background-image: url(background.png); /* Replace with your image filename */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Or 'scroll' */
+    min-height: 100vh;
+    
+}
+/* style.css */
+
+
+/* Add other styles for your website elements here */
+h1, p {
+    /* Example styles for content */
+    padding: 20px;
+}
+
+
+/* Container for main sections */
+header, main, footer {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 35px;
+    background-color: #ffffff; /* White background for content */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* Header Styling - Green Theme */
+header {
+    /* Green gradient background */
+    background: linear-gradient(90deg, #2E7D32, #4CAF50); /* Dark Green to Medium Green */
+    color: #ffffff;       /* White text on gradient */
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    /* Adjusted padding slightly as nav is removed */
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+header h1 {
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Main Content Styling - Green Theme */
+main {
+    border-radius: 0 0 8px 8px;
+    margin-top: 0;
+    padding-top: 40px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+main h2 {
+    color: #2E7D32; /* Dark Green for main headings */
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #E8F5E9; /* Very Light Green underline */
+    padding-bottom: 10px;
+}
+
+main h3 {
+    color: #4CAF50; /* Medium Green for subheadings */
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+main p {
+    margin-bottom: 15px;
+}
+
+main ul {
+    list-style: none;
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+
+main ul li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Custom bullet using pseudo-element - Green Theme */
+main ul li::before {
+    content: '✓';
+    color: #4CAF50; /* Medium Green checkmark */
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+}
+
+/* Link styling within main content - Green Theme */
+main a {
+    color: #388E3C; /* Medium-Dark Green for links */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+main a:hover {
+    color: #1B5E20; /* Very Dark Green on hover */
+    text-decoration: underline;
+}
+
+/* Footer Styling - Green Theme */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #1B5E20; /* Very Dark Green background */
+    color: #A5D6A7;       /* Medium-Light Green text */
+    font-size: 0.9em;
+    border-radius: 8px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Fade-in Animation Definition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Basic Responsive Adjustments */
+@media (max-width: 768px) {
+    header, main, footer {
+        padding: 25px;
+        margin-left: 15px;
+        margin-right: 15px;
+        max-width: calc(100% - 30px);
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* --- ADD THE FOLLOWING CSS RULES --- */
+
+/* Navigation Arrow Styling */
+.nav-arrow {
+    position: fixed; /* Keeps arrows in place during scroll */
+    top: 50%;        /* Center vertically */
+    transform: translateY(-50%); /* Fine-tune vertical centering */
+    background-color: #4CAF50; /* Medium Green background */
+    color: white;
+    padding: 10px 15px; /* Padding around arrow */
+    border-radius: 50%; /* Circular shape */
+    font-size: 24px;    /* Size of the arrow character */
+    line-height: 1;     /* Helps center the arrow character vertically */
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    z-index: 1000;      /* Ensure arrows are above other content */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.nav-arrow:hover {
+    background-color: #388E3C; /* Darker green on hover */
+    transform: translateY(-50%) scale(1.1); /* Scale up slightly on hover */
+    cursor: pointer;
+}
+
+/* Position the 'next' arrow on the right */
+.arrow-next {
+    right: 30px; /* Distance from the right edge */
+}
+
+/* Position the 'previous' arrow on the left */
+.arrow-prev {
+    left: 30px;  /* Distance from the left edge */
+}
+
+/* Responsive adjustments for arrows on smaller screens */
+@media (max-width: 768px) {
+    .nav-arrow {
+        padding: 8px 12px;
+        font-size: 20px;
+    }
+    .arrow-next {
+        right: 15px; /* Closer to edge on small screens */
+    }
+    .arrow-prev {
+        left: 15px; /* Closer to edge on small screens */
+    }
+}
+/* --- REPLACE the existing .model-container and iframe rules with these --- */
+
+/* Container for the 3D model iframe */
+.model-container {
+    /* You can increase max-width if you want the container itself wider */
+    max-width: 900px; /* e.g., change to 1100px if desired */
+    margin: 40px auto;
+    padding: 0;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Target the iframe *inside* Sketchfab's wrapper for reliability */
+.model-container .sketchfab-embed-wrapper iframe {
+    display: block; /* Prevents extra space below */
+    width: 100%;    /* Makes iframe fill container width */
+
+    /* --- MAKE THE MODEL BIGGER HERE --- */
+
+    /* Option 1: Increase the fixed height (simple) */
+    height: 700px;   /* INCREASED! Adjust this value (e.g., 600px, 750px, etc.) */
+
+    /* Option 2: Use aspect ratio for responsive height (Recommended) */
+    /* Comment out the line above ('height: 700px;') and uncomment the two lines below */
+    /* aspect-ratio: 16 / 9; /* Common ratio, adjust (e.g., 4 / 3) if needed */ */
+    /* height: auto; */
+
+    border: none;   /* Remove default iframe border */
+}
+
+/* Optional: Style Sketchfab's wrapper if needed, but often setting iframe size is enough */
+.model-container .sketchfab-embed-wrapper {
+     /* Usually doesn't need specific sizing if the iframe size is set */
+     /* Ensure it doesn't constrain the iframe if issues persist */
+     width: 100%;
+     display: block;
+}
+
+/* You might want to hide the attribution paragraph if it interferes with layout */
+/* Or style it differently */
+/* .model-container .sketchfab-embed-wrapper p { display: none; } */
+
+/* --- End of updated/added rules --- */
+
+/* --- Keep your existing styles --- */
+/* --- Keep your existing styles --- */
+.image-container {
+    width: 200px;
+    height: 200px;
+    border: 5px solid navy;
+    border-radius: 30px;
+    padding: 1px;
+    box-sizing: border-box;
+    /* display: inline-block; You can remove this if Flexbox is handling layout */
+    /* margin: 20px; Remove margins controlled by flex container/gap */
+  }
+  
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  
+  /* --- Add this CSS for the Flexbox layout --- */
+  .flex-container {
+    display: flex;          /* Enables Flexbox layout */
+    align-items: center;/* Aligns items vertically to the top (can be center, flex-end) */
+    gap: 25px;              /* Creates space BETWEEN the text block and image */
+    margin-bottom: 20px;    /* Adds space below the entire flex container */
+  }
+  
+  .flex-container .text-content {
+    /* Allows this block to grow and take available space */
+    flex-grow: 1;
+    /* You could also set a max-width if needed: max-width: 60%; */
+  }
+  
+  .flex-container .image-container {
+    /* Prevents the image container from shrinking if space is limited */
+    flex-shrink: 0;
+    /* The width/height are already set, so it takes up that fixed space */
+  }
+
+  /* --- Optional Header Styling --- */
+.profile-header {
+    background-color: #4CAF50; /* Example green */
+    color: white;
+    padding: 20px;
+    text-align: center; /* Or adjust as needed */
+  }
+  
+  /* --- Image Container Styling (Keep from previous examples) --- */
+  .image-container {
+    width: 150px;           /* Adjust size as needed */
+    height: 200px;          /* Adjust size as needed */
+    border: 4px solid #6c757d; /* Example border color based on image */
+    border-radius: 25px;    /* Rounded square border */
+    padding: 6px;           /* Optional padding */
+    box-sizing: border-box;
+    /* No margin/display needed here if using Flexbox gap/alignment */
+  }
+  
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 99%;     /* Circular image */
+    object-fit: cover;
+  }
+  
+  /* --- Layout for the Main Content Area --- */
+  .main-content-area {
+    display: flex;              /* ** ACTIVATE FLEXBOX ** */
+    align-items: center;        /* Vertically align links and image center */
+    justify-content: center; /* Center items horizontally OR use space-between/space-around */
+    gap: 40px;                  /* ** SPACE BETWEEN Links and Image ** Adjust as needed */
+    padding: 30px;              /* Padding around the content area */
+    /* background-color: white; /* Optional: If you need a white background */
+    max-width: 900px;         /* Optional: Limit width */
+    margin: 20px auto;        /* Optional: Center the whole block on the page */
+  }
+  
+  /* --- Styling for the Links Section --- */
+  .links-section {
+    /* No specific flex properties needed unless you want it to grow/shrink */
+  }
+  
+  .links-section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em; /* Adjust size */
+    color: #333;     /* Adjust color */
+  }
+  
+  .links-section ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .links-section li {
+    margin-bottom: 10px; /* Space between links */
+  }
+  
+  .links-section a {
+    text-decoration: none;
+    color: #007bff; /* Link color */
+    font-weight: bold;
+  }
+  .links-section a:hover {
+    text-decoration: underline;
+  }
+  
+  /* --- Ensure Image Container behaves well in Flex --- */
+  .main-content-area .image-container {
+     flex-shrink: 0; /* Prevent image from shrinking if space gets tight */
+     margin: 0; /* Override any previous margin if needed */
+  }
