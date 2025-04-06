@@ -40,6 +40,7 @@ header, main, footer {
     background-color: #ffffff; /* White background for content */
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    opacity: 0.90;
 }
 
 /* Header Styling - Green Theme */
@@ -53,6 +54,8 @@ header {
     /* Adjusted padding slightly as nav is removed */
     padding-top: 35px;
     padding-bottom: 35px;
+    opacity: 90%;
+    
 }
 
 header h1 {
